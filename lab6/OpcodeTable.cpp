@@ -15,13 +15,15 @@ OpcodeTable::OpcodeTable()
  
   //Your code here
   
-  myArray[ADDI].name = "addi"; myArray[ADD].numOps = 2;
+  myArray[ADDI].name = "addi";
+  myArray[ADD].numOps = 3;
   myArray[ADDI].rdPos = -1; 
-  myArray[ADDI].rsPos = 1;
-  myArray[ADDI].rtPos = 0; 
+  myArray[ADDI].rsPos = 0;
+  myArray[ADDI].rtPos = 1; 
   myArray[ADDI].immPos = 2;
   myArray[ADDI].instType = ITYPE;
   myArray[ADDI].op_field = "001000";
+  myArray[ADDI].funct_field = "";
  
   myArray[SUB].name = "sub";
   myArray[SUB].numOps = 3;  
@@ -44,7 +46,7 @@ OpcodeTable::OpcodeTable()
   myArray[MULT].funct_field = "011000";
  
   myArray[MFHI].name = "mfhi";
-  myArray[MFHI].numOps = 2;
+  myArray[MFHI].numOps = 1;
   myArray[MFHI].rdPos = 0;
   myArray[MFHI].rsPos = -1;
   myArray[MFHI].rtPos = -1;
@@ -58,7 +60,7 @@ OpcodeTable::OpcodeTable()
   myArray[SRL].rdPos = 0;
   myArray[SRL].rsPos = -1;
   myArray[SRL].rtPos = 1;
-  myArray[SRL].immPos = -1;
+  myArray[SRL].immPos = 2;
   myArray[SRL].instType = RTYPE;
   myArray[SRL].op_field = "000000";
   myArray[SRL].funct_field = "000010";
@@ -68,7 +70,7 @@ OpcodeTable::OpcodeTable()
   myArray[SRA].rdPos = 0;
   myArray[SRA].rsPos = -1;
   myArray[SRA].rtPos = 1;
-  myArray[SRA].immPos = -1;
+  myArray[SRA].immPos = 2;
   myArray[SRA].instType = RTYPE;
   myArray[SRA].op_field = "000000";
   myArray[SRA].funct_field = "000011";
@@ -78,20 +80,20 @@ OpcodeTable::OpcodeTable()
   myArray[SLTI].rdPos = -1;
   myArray[SLTI].rsPos = 1;
   myArray[SLTI].rtPos = 0;
-  myArray[SLTI].immPos = -1;
+  myArray[SLTI].immPos = 2;
   myArray[SLTI].instType = ITYPE;
   myArray[SLTI].op_field = "001010";
-  myArray[SLTI].funct_field = "imm";
+  myArray[SLTI].funct_field = "";
 
   myArray[LW].name = "lw";
   myArray[LW].numOps = 2;
   myArray[LW].rdPos = -1;
   myArray[LW].rsPos = -1;
   myArray[LW].rtPos = 0;
-  myArray[LW].immPos = -1;
+  myArray[LW].immPos = 1;
   myArray[LW].instType = ITYPE;
   myArray[LW].op_field = "100011";
-  myArray[LW].funct_field = "offset";
+  myArray[LW].funct_field = "";
 
   myArray[J].name = "j";
   myArray[J].numOps = 2;
@@ -101,20 +103,9 @@ OpcodeTable::OpcodeTable()
   myArray[J].immPos = -1;
   myArray[J].instType = JTYPE;
   myArray[J].op_field = "000010";
-  myArray[J].funct_field = "target";
-
-  myArray[UNDEFINED].name = "undefined";
-  myArray[UNDEFINED].numOps = 3;
-  myArray[UNDEFINED].rdPos = 0;
-  myArray[UNDEFINED].rsPos = 1;
-  myArray[UNDEFINED].rtPos = 2;
-  myArray[UNDEFINED].immPos = -1;
-  myArray[UNDEFINED].instType = RTYPE;
-  myArray[UNDEFINED].op_field = "000000";
-  myArray[UNDEFINED].funct_field = "100000";
+  myArray[J].funct_field = "";
 
 }
-
 
 
 

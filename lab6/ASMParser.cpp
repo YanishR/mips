@@ -258,7 +258,27 @@ string ASMParser::encode(Instruction i)
   // Given a valid instruction, returns a string representing the 32 bit MIPS binary encoding
   // of that instruction.
 {
-  // Your code here
-  return "";
+  //return "";
+  if (i.getInstType() == RTYPE)
+    encodeR(i);
+  else if (i.getInsType() == ITYPE)
+    encodeI(i); 
+  else if (i.getInstType() == JTYPE)
+    encodeJ(i);
 }
 
+string ASMParser::encodeR(Instruction i)
+{
+  string inst();
+  if (i.getInstType() == RTYPE)
+
+}
+
+
+string ASMParser::encodeI(Instruction i)
+{
+}
+
+string ASMParser::encodeJ(Instruction i)
+{
+}

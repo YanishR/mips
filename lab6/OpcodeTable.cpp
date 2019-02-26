@@ -15,121 +15,93 @@ OpcodeTable::OpcodeTable()
  
   //Your code here
   
-  myArray[ADDI].name = "addi"; myArray[ADD].numOps = 2;  
-  myArray[ADD].rdPos = -1; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 0; 
-  myArray[ADD].immPos = 2;
-  myArray[ADD].instType = ITYPE;
-  myArray[ADD].op_field = "001000"; myArray[ADD].name = "sub";
-  myArray[ADD].numOps = 3;  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100010";
- 
-  myArray[ADD].name = "mult";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = -; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "011000";
- 
-  myArray[ADD].name = "mfhi";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = -1; 
-  myArray[ADD].rsPos = 0;
-  myArray[ADD].rtPos = 1; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "010000";
+  myArray[ADDI].name = "addi"; myArray[ADDI].numOps = 2;  
+  myArray[ADDI].rdPos = -1; 
+  myArray[ADDI].rsPos = 1;
+  myArray[ADDI].rtPos = 0; 
+  myArray[ADDI].immPos = 2;
+  myArray[ADDI].instType = ITYPE;
+  myArray[ADDI].op_field = "001000"; 
   
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000"; 
+  myArray[SUB].name = "sub";
+  myArray[SUB].numOps = 3; 
+  myArray[SUB].rdPos = 0; 
+  myArray[SUB].rsPos = 1;
+  myArray[SUB].rtPos = 2; 
+  myArray[SUB].immPos = -1;
+  myArray[SUB].instType = RTYPE;
+  myArray[SUB].op_field = "000000";
+  myArray[SUB].funct_field = "100010";
+ 
+  myArray[MULT].name = "mult";
+  myArray[MULT].numOps = 3;  
+  myArray[MULT].rdPos = -; 
+  myArray[MULT].rsPos = 1;
+  myArray[MULT].rtPos = 2; 
+  myArray[MULT].immPos = -1;
+  myArray[MULT].instType = RTYPE;
+  myArray[MULT].op_field = "000000";
+  myArray[MULT].funct_field = "011000";
+ 
+  myArray[MFHI].name = "mfhi";
+  myArray[MFHI].numOps = 2;  
+  myArray[MFHI].rdPos = -1; 
+  myArray[MFHI].rsPos = 0;
+  myArray[MFHI].rtPos = 1; 
+  myArray[MFHI].immPos = -1;
+  myArray[MFHI].instType = RTYPE;
+  myArray[MFHI].op_field = "000000";
+  myArray[MFHI].funct_field = "010000";
+  
+  myArray[SRL].name = "add";
+  myArray[SRL].numOps = 3;  
+  myArray[SRL].rdPos = 0; 
+  myArray[SRL].rsPos = 1;
+  myArray[SRL].rtPos = 2; 
+  myArray[SRL].immPos = -1;
+  myArray[SRL].instType = RTYPE;
+  myArray[SRL].op_field = "000000";
+  myArray[SRL].funct_field = "100000"; 
 
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
+  myArray[SRA].name = "add";
+  myArray[SRA].numOps = 3;  
+  myArray[SRA].rdPos = 0; 
+  myArray[SRA].rsPos = 1;
+  myArray[SRA].rtPos = 2; 
+  myArray[SRA].immPos = -1;
+  myArray[SRA].instType = RTYPE;
+  myArray[SRA].op_field = "000000";
+  myArray[SRA].funct_field = "100000";
 
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
+  myArray[SLTI].name = "add";
+  myArray[SLTI].numOps = 3;  
+  myArray[SLTI].rdPos = 0; 
+  myArray[SLTI].rsPos = 1;
+  myArray[SLTI].rtPos = 2; 
+  myArray[SLTI].immPos = -1;
+  myArray[SLTI].instType = RTYPE;
+  myArray[SLTI].op_field = "000000";
+  myArray[SLTI].funct_field = "100000";
 
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
+  myArray[LW].name = "add";
+  myArray[LW].numOps = 3;  
+  myArray[LW].rdPos = 0; 
+  myArray[LW].rsPos = 1;
+  myArray[LW].rtPos = 2; 
+  myArray[LW].immPos = -1;
+  myArray[LW].instType = RTYPE;
+  myArray[LW].op_field = "000000";
+  myArray[LW].funct_field = "100000";
 
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
-
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
-
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
-
-  myArray[ADD].name = "add";
-  myArray[ADD].numOps = 3;  
-  myArray[ADD].rdPos = 0; 
-  myArray[ADD].rsPos = 1;
-  myArray[ADD].rtPos = 2; 
-  myArray[ADD].immPos = -1;
-  myArray[ADD].instType = RTYPE;
-  myArray[ADD].op_field = "000000";
-  myArray[ADD].funct_field = "100000";
-
+  myArray[J].name = "add";
+  myArray[J].numOps = 3;  
+  myArray[J].rdPos = 0; 
+  myArray[J].rsPos = 1;
+  myArray[J].rtPos = 2; 
+  myArray[J].immPos = -1;
+  myArray[J].instType = RTYPE;
+  myArray[J].op_field = "000000";
+  myArray[J].funct_field = "100000";
 }
 
 

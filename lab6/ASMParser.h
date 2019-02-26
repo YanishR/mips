@@ -79,6 +79,13 @@ class ASMParser{
   // Given a valid instruction, returns a string representing the 32 bit MIPS binary encoding
   // of that instruction.
   string encode(Instruction i);
+  // Helper methods for encode. Individually encode Instruction I depending on the Type. 
+  string encodeR(Instruction i, string funct_field);
+
+  string encodeI(Instruction i, string op_field);
+
+  string encodeJ(Instruction i);
+
 
 };
 

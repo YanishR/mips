@@ -1,4 +1,5 @@
 #include "ASMParser.h"
+#include <bitset>
 
 ASMParser::ASMParser(string filename)
   // Specify a text file containing MIPS assembly instructions. Function
@@ -258,27 +259,40 @@ string ASMParser::encode(Instruction i)
   // Given a valid instruction, returns a string representing the 32 bit MIPS binary encoding
   // of that instruction.
 {
-  //return "";
-  if (i.getInstType() == RTYPE)
-    encodeR(i);
-  else if (i.getInsType() == ITYPE)
-    encodeI(i); 
-  else if (i.getInstType() == JTYPE)
-    encodeJ(i);
+  OpcodeTable table;
+  InstType type = table.getInstType(i.getOpcode());
+  
+  if (type == RTYPE)
+    return encodeR(i, table.getFunctField(i.getOpcode()));
+
+  else if (type  == ITYPE)
+    return encodeI(i, table.getOpcodeField(i.getOpcode())); 
+
+  else if (type  == JTYPE)
+    return encodeJ(i);
+
+  return "";
 }
 
-string ASMParser::encodeR(Instruction i)
+string ASMParser::encodeR(Instruction i, string funct_field)
 {
-  string inst();
-  if (i.getInstType() == RTYPE)
+  string encoded("000000");
+  encoded +=  std::bitset<5>(i.getRS()).to_string();
+  encoded +=  std::bitset<5>(i.getRT()).to_string();
+  encoded +=  std::bitset<5>(i.getRD()).to_string();
+  encoded += "00000";
+  encoded += funct_field;
+  return encoded;
 
 }
 
 
-string ASMParser::encodeI(Instruction i)
+string ASMParser::encodeI(Instruction i, string op_field)
 {
+  return "";
 }
 
 string ASMParser::encodeJ(Instruction i)
 {
+  return "";
 }

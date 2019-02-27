@@ -269,19 +269,19 @@ string ASMParser::encode(Instruction i)
     return encodeI(i, table.getOpcodeField(i.getOpcode())); 
 
   else if (type  == JTYPE)
-    return encodeJ(i);
+    return encodeJ(i, table.getOpcodeField(i.getOpcode()));
 
   return "";
 }
 
 string ASMParser::encodeR(Instruction i, string funct_field)
 {
-  string encoded("000000");
-  encoded +=  std::bitset<5>(i.getRS()).to_string();
-  encoded +=  std::bitset<5>(i.getRT()).to_string();
-  encoded +=  std::bitset<5>(i.getRD()).to_string();
-  encoded += "00000";
-  encoded += funct_field;
+  string encoded("000000"); //default opcode for R-type 
+  encoded +=  std::bitset<5>(i.getRS()).to_string();  //get rs and convert to string
+  encoded +=  std::bitset<5>(i.getRT()).to_string();  //get rt and convert to string
+  encoded +=  std::bitset<5>(i.getRD()).to_string();  //get rd and convert to string
+  encoded += "00000";   //for the shift amount
+  encoded += funct_field; //add the corresponding function field
   return encoded;
 
 }
@@ -289,10 +289,19 @@ string ASMParser::encodeR(Instruction i, string funct_field)
 
 string ASMParser::encodeI(Instruction i, string op_field)
 {
-  return "";
+  string encoded(""); //this varies
+  encoded += op_field;
+  encoded += std::bitset<5>(i.getRS()).to_string();  //get rs and convert to string
+  encoded += std::bitset<5>(i.getRT()).to_string();  //get rt and convert to string
+  encoded += std::bitset<16>(i.getImmediate()).to_string();
+  return encoded;
 }
 
-string ASMParser::encodeJ(Instruction i)
+string ASMParser::encodeJ(Instruction i, string op_field)
 {
-  return "";
+  string encoded(""); //this varies
+  encoded += op_field;
+  encoded += "00000000000000000000000000";
+  //encoded += std:bitset<26>()
+  return encoded;
 }

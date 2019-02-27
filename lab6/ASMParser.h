@@ -84,7 +84,7 @@ class ASMParser{
 
   string encodeI(Instruction i, string op_field);
 
-  string encodeJ(Instruction i);
+  string encodeJ(Instruction i, string op_field);
 
 
 };

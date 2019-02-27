@@ -97,10 +97,11 @@ OpcodeTable::OpcodeTable()
 
   myArray[J].name = "j";
   myArray[J].numOps = 1;
-  myArray[J].rdPos = 0;
+  myArray[J].rdPos = -1;
   myArray[J].rsPos = -1;
   myArray[J].rtPos = -1;
-  myArray[J].immPos = -1;
+  myArray[J].immPos = 0;
+  myArray[J].immLabel = true;
   myArray[J].instType = JTYPE;
   myArray[J].op_field = "000010";
   myArray[J].funct_field = "";

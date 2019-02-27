@@ -67,9 +67,9 @@ OpcodeTable::OpcodeTable()
 
   myArray[SRA].name = "sra";
   myArray[SRA].numOps = 3;
-  myArray[SRA].rdPos = 0;
+  myArray[SRA].rdPos = 1;
   myArray[SRA].rsPos = -1;
-  myArray[SRA].rtPos = 1;
+  myArray[SRA].rtPos = 0;
   myArray[SRA].immPos = 2;
   myArray[SRA].instType = RTYPE;
   myArray[SRA].op_field = "000000";
@@ -86,9 +86,9 @@ OpcodeTable::OpcodeTable()
   myArray[SLTI].funct_field = "";
 
   myArray[LW].name = "lw";
-  myArray[LW].numOps = 2;
+  myArray[LW].numOps = 3;
   myArray[LW].rdPos = -1;
-  myArray[LW].rsPos = -1;
+  myArray[LW].rsPos = 2;
   myArray[LW].rtPos = 0;
   myArray[LW].immPos = 1;
   myArray[LW].instType = ITYPE;

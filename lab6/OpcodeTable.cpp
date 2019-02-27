@@ -16,10 +16,10 @@ OpcodeTable::OpcodeTable()
   //Your code here
   
   myArray[ADDI].name = "addi";
-  myArray[ADD].numOps = 3;
+  myArray[ADDI].numOps = 3;
   myArray[ADDI].rdPos = -1; 
-  myArray[ADDI].rsPos = 0;
-  myArray[ADDI].rtPos = 1; 
+  myArray[ADDI].rsPos = 1;
+  myArray[ADDI].rtPos = 0; 
   myArray[ADDI].immPos = 2;
   myArray[ADDI].instType = ITYPE;
   myArray[ADDI].op_field = "001000";
@@ -36,7 +36,7 @@ OpcodeTable::OpcodeTable()
   myArray[SUB].funct_field = "100010";
   
   myArray[MULT].name = "mult";
-  myArray[MULT].numOps = 3;  
+  myArray[MULT].numOps = 2;  
   myArray[MULT].rdPos = -1;
   myArray[MULT].rsPos = 0;
   myArray[MULT].rtPos = 1;
@@ -96,7 +96,7 @@ OpcodeTable::OpcodeTable()
   myArray[LW].funct_field = "";
 
   myArray[J].name = "j";
-  myArray[J].numOps = 2;
+  myArray[J].numOps = 1;
   myArray[J].rdPos = 0;
   myArray[J].rsPos = -1;
   myArray[J].rtPos = -1;

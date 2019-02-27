@@ -197,7 +197,6 @@ bool ASMParser::getOperands(Instruction &i, Opcode o,
   // Given an Opcode, a string representing the operands, and the number of operands, 
   // breaks operands apart and stores fields into Instruction.
 {
-
   if(operand_count != opcodes.numOperands(o))
     return false;
 

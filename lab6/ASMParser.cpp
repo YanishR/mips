@@ -279,8 +279,8 @@ string ASMParser::encodeR(Instruction i, string funct_field)
   encoded +=  std::bitset<5>(i.getRS()).to_string();  //get rs and convert to string
   encoded +=  std::bitset<5>(i.getRT()).to_string();  //get rt and convert to string
   encoded +=  std::bitset<5>(i.getRD()).to_string();  //get rd and convert to string
-  encoded += "00000";   //for the shift amount
-  encoded += funct_field; //add the corresponding function field
+  encoded +=  std::bitset<5>(i.getImmediate()).to_string();   //for the shift amount
+  encoded +=  funct_field; //add the corresponding function field
   return encoded;
 
 }
@@ -300,7 +300,6 @@ string ASMParser::encodeJ(Instruction i, string op_field)
 {
   string encoded(""); //this varies
   encoded += op_field;
-  encoded += "00000000000000000000000000";
-  //encoded += std:bitset<26>()
+  encoded += std::bitset<26>(i.getImmediate()/4).to_string();
   return encoded;
 }

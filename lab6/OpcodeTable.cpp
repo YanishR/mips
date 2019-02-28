@@ -67,9 +67,9 @@ OpcodeTable::OpcodeTable()
 
   myArray[SRA].name = "sra";
   myArray[SRA].numOps = 3;
-  myArray[SRA].rdPos = 1;
+  myArray[SRA].rdPos = 0;
   myArray[SRA].rsPos = -1;
-  myArray[SRA].rtPos = 0;
+  myArray[SRA].rtPos = 1;
   myArray[SRA].immPos = 2;
   myArray[SRA].instType = RTYPE;
   myArray[SRA].op_field = "000000";
